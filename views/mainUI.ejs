@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>생활백서</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/weather.css">
+    <link rel="stylesheet" href="/css/media.css">
+    <script src="/js/bus.js"></script>
+    <script src="/js/weather.js"></script>
+    <script src="/js/food.js"></script>
+</head>
+<!--부서 별 활동 이행 내역-->
+<body>
+    <div class="container">
+        <section class="weather">
+            <div id="weather-info">
+                <div id="weather-icon" class="weather-icon"></div>
+                <div id="sunrise-sunset"></div>
+                <div id="wind-info"></div>
+                <div id="temperature">Loading...</div>
+                <div id="weather-description"></div>
+            </div>
+        </section>
+        <section class="right-column">
+        <section class="hat">
+            탈모
+        </section>
+
+        <section class="bus">
+            <div> <img src="/img/bus.png" alt="버스 사진" width="80"> </div>
+            <div id="result"></div>
+            <!-- 페이지 로드 시 자동으로 업데이트 시작 -->
+         <script>
+            window.onload = function() {
+                updateBusInfo();
+            };
+        </script>
+        </section>
+        </section>
+    </div>
+
+    <div id="myModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImg">
+    </div>
+        <div class="image-container">
+            <div class="image-box" onclick="openModal('/img/식단표.jpg', '식단표')">
+                <div>식단표</div>
+                <img src="/img/식단표.jpg" alt="식단표">
+            </div>
+            <div class="image-box" onclick="openModal('/img/학생당직표.jpg', '학생당직표')">
+                <div>학생당직표</div>
+                <img src="/img/학생당직표.jpg" alt="학생당직표">
+            </div>    
+            <div class="image-box" onclick="openModal('/img/안전당직표.jpg', '안전당직표')">
+                <div>안전당직표</div>  
+                <img src="/img/안전당직표.jpg" alt="안전당직표">
+            </div>
+        </div>
+
+<!--꿀팁, 검창(재고표 포함), 선사정보, 학사일정 및 조직도(비상연락처, 기타에 포함), 각종 시간, -->
+    <section class="icon_list">
+                        <a href="/html/tipUI.html" class="icon">
+                            <span>생활</span>
+                            <span>꿀팁</span>
+                        </a>
+                        <a href="/html/gumchangUI.html" class="icon">
+                            <span>검수</span>
+                            <span>창고</span>
+                        </a>
+                        <a href="/html/company.html" class="icon">
+                            <span>선사</span>
+                            <span>정보</span>
+                        </a>
+                        <a href="/views/calc.ejs" class="icon">
+                            <span>실습점수</span>
+                            <span>계산기</span>
+                        </a>
+                        <a href="https://tis.kmou.ac.kr/nxui/index.html" class="icon">
+                            <span>종정시</span>
+                        </a>
+                        <a href="http://kmou.btl-fm.com/" class="icon">
+                            <span>FMS</span>
+                        </a>
+                        <a href="/html/C.html" class="icon">
+                            <span>생활</span>
+                            <span>꿀팁</span>
+                        </a>
+                        <a href="/html/C.html" class="icon">
+                            <span>생활</span>
+                            <span>꿀팁</span>
+                        </a>
+                        <a href="/html/C.html" class="icon">
+                            <span>생활</span>
+                            <span>꿀팁</span>
+                        </a>
+    </section>
+
+    <section class="notice">
+        <div class="notice_head">
+            <h2>공지사항</h2>
+            <a href="/html/post.html">더보기</a>
+        </div>
+        <div class="notice_body">
+            <div class="notice_list">
+                <ul>
+                    <% users.forEach (allrst => { %>
+                        <li> <%= allrst.name %> </li>
+                    <% }); %>
+                    </ul>
+                
+                    <% products.forEach (product => { %>
+                        <li> <%= product.name %> </li>
+                        <li> <%= product.quantity %> </li>
+                    <% }); %>
+                </ul>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

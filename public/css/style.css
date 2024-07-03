@@ -1,0 +1,181 @@
+* {
+    font-size: 12px;
+}
+
+/*날씨, 탈모, 버스 section*/*
+.container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.weather, .bus {
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.weather {
+    flex: 1;
+    display: flex;
+    flex-direction:column;
+    padding: 5px; /* 내부 여백을 추가하여 콘텐츠와 테두리 사이의 공간 확보 */
+    text-align: center; /*날씨 정보 중앙 정렬*/
+    margin-top: 0px;
+    margin-inline-start: 0;
+    margin-bottom: 25px;
+    border-style:double;
+    border-width: 1px;
+    border-color: black;
+    border-radius: 50%;
+    align-items: center;
+}
+.weather-info {
+    align-items: center;
+}
+
+#weather-icon {
+    margin-left: 40%;
+    width: 30px;
+    height: 30px;
+}
+.right-column {
+    flex: 1;
+}
+
+.bus, .hat {
+    flex: 1;
+    justify-content: flex-end;
+}
+.hat {
+    border-style:double;
+    border-width: 1px;
+    border-color: black;
+    border-radius: 1rem;
+
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    margin-left: 65%;
+    margin-bottom: 12px;
+}
+.bus{
+    margin-inline-end: 0;
+    display: flex;
+    flex-direction:row;
+    margin-top: 12px;
+    margin-left: flex;
+    margin-bottom: 25px;
+
+    border-style:double;
+    border-width: 1px;
+    border-color: black;
+    border-radius: 1rem;
+
+    padding-top: 20px;
+    padding-bottom: 15px;
+    padding-right: 20px;
+}
+
+.bus img {
+    width: 30px;
+}
+
+
+/*각종 버튼 section*/
+.icon_list {
+    display: flex;
+    flex-wrap: wrap; /* 요소들을 필요할 때 줄 바꿈 */
+    justify-content: center;
+    align-items: center; /* 세로 방향에서 요소들을 중앙 정렬 */
+}
+.icon {
+    text-decoration: none; /* 기본 텍스트 밑줄 제거 */
+    padding: 10px 10px;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff; 
+    margin-right: 30px;
+    margin-bottom: 20px;
+}
+
+.icon span {
+    display: block; /* 각 글자를 블록 요소로 처리하여 한 줄에 하나씩 표시 */
+    font-size: 2rem; /* 원하는 글꼴 크기 */
+    line-height: 1; /* 글꼴 라인 간격을 조정 */
+    text-align: center; /* 텍스트 가운데 정렬 */
+    margin: 0 5px; /* 각 글자 사이의 간격 설정 */
+}
+
+
+/*식단표 section*/
+.modal {
+    display: none; /* 초기에는 숨겨진 상태 */
+    position: fixed; /* 고정 위치 */
+    z-index: 1; /* 위에 위치 */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* 스크롤 허용 */
+    background-color: rgba(0,0,0,0.9); /* 배경 색상 */
+  }
+  
+  .modal-content {
+    margin: auto;
+    display: block;
+    max-width: 80%; /* 최대 너비 */
+    max-height: 80%; /* 최대 높이 */
+  }
+  
+  .modal-content img {
+    width: 100%; /* 이미지 너비 */
+    height: auto; /* 비율 유지 */
+    display: block;
+    margin: auto;
+  }
+  
+  /* 이미지 컨테이너 스타일 */
+  .image-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    max-width: 100%; /* 부모 요소 너비 제한 */
+    overflow: auto; /* 화면 너비를 넘어갈 경우 스크롤 생성 */
+  }
+  
+  .image-box {
+    text-align: center; /* 텍스트 가운데 정렬 */
+    padding: 10px; /* 여백 추가 */
+    border: 1px solid #ccc; /* 테두리 선 추가 */
+    width: 45%; /* 이미지 박스 너비 설정 */
+    cursor: pointer; /* 포인터 커서 */
+  }
+  
+  .image-box img {
+    max-width: 100%; /* 이미지 최대 너비 설정 */
+    height: auto; /* 비율 유지 */
+    display: block; /* 인라인 요소를 블록 요소로 변환하여 가로 중앙 정렬 */
+    margin: 0 auto; /* 가로 중앙 정렬 */
+  }
+
+/*게시판 section*/
+.notice
+.notice_head{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.notice_body{
+    border-style:double;
+    border-width: 1px;
+    border-color: black;
+    border-radius: 1rem;
+}
+.notice_list{
+    margin-left: 2%;
+}

@@ -1,0 +1,86 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f3f3f3;
+}
+
+.container {
+  position: relative;
+  display: inline-block;
+}
+.btn-group {
+  position: relative;
+  top: 0px; /* 버튼 위치 조정 */
+  left: 0px; /* 버튼 위치 조정 */
+  z-index: 10; /* 버튼을 다른 요소 위에 표시 */
+  justify-content: space-between; /* 버튼들 사이의 간격을 동일하게 배치 */
+  display: flex;
+  padding-bottom: 10px;
+  margin: auto;
+}
+
+.btn-group button {
+  margin-right: 5px;
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+
+.slider-container {
+  width: 100%;
+}
+
+.slider-container .slider {
+  position: relative;
+  width: 80%;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.slider-container .slider .slides {
+  display: flex;
+  transition: transform 0.5s ease;
+  width: 100%; /* 이미지가 부모 요소인 .slider의 너비에 맞추기 */
+}
+
+.slider-container .slider .slides .slide {
+  min-width: 100%;
+  height: auto;
+  object-fit: cover; /* 이미지의 비율을 유지하며 슬라이드 컨테이너에 맞게 조절 */
+  vertical-align: top; /* 이미지 세로 정렬 */
+}
+
+.slider-container .slider button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 50%;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+.slider-container .slider button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}

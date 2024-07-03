@@ -1,0 +1,21 @@
+.weather-icon {
+    width: 100px;
+    height: 100px;
+    background-size: cover;
+    background-position: center;
+    margin: 5px;
+}
+.sunny {
+    background-image: url('/img/sun.png');
+}
+.cloudy {
+    background-image: url('/img/cloudy.png');
+}
+.rainy {
+    background-image: url('/img/rainy.png');
+}
+.overcastclouds {
+    background-image: url('/img/overcastclouds.png');
+}
+
+/* 추가적으로 필요한 날씨 상태에 따른 이미지를 추가할 수 있습니다 */
