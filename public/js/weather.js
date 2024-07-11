@@ -18,21 +18,21 @@ fetch(apiUrl)
     document.getElementById('weather-description').textContent = `날씨: ${weatherDescription}`;
 
     // 풍속 및 풍향 정보 가져오기
-    const windSpeed = data.wind.speed;
-    const windDeg = data.wind.deg;
-    document.getElementById('wind-info').textContent = `풍속: ${windSpeed} m/s, 풍향: ${windDeg}°`;
+    //const windSpeed = data.wind.speed;
+    //const windDeg = data.wind.deg;
+    //document.getElementById('wind-info').textContent = `풍속: ${windSpeed} m/s, 풍향: ${windDeg}°`;
 
     // 일출 및 일몰 시간 가져오기
-    const options = { hour12: false, hour: 'numeric', minute: 'numeric' };
-    const sunrise = new Date(data.sys.sunrise * 1000).toLocaleTimeString('ko-KR', options);
-    const sunset = new Date(data.sys.sunset * 1000).toLocaleTimeString('ko-KR', options);
-    document.getElementById('sunrise-sunset').textContent = `일출: ${sunrise}, 일몰: ${sunset}`;
+    //const options = { hour12: false, hour: 'numeric', minute: 'numeric' };
+    //const sunrise = new Date(data.sys.sunrise * 1000).toLocaleTimeString('ko-KR', options);
+    //const sunset = new Date(data.sys.sunset * 1000).toLocaleTimeString('ko-KR', options);
+    //document.getElementById('sunrise-sunset').textContent = `일출: ${sunrise}, 일몰: ${sunset}`;
     
     // 날씨 상태에 따라 이미지 설정
     const weatherIcon = document.getElementById('weather-icon');
     if (weatherDescription.includes('맑음') || weatherDescription.includes('구름')) {
         weatherIcon.classList.add('cloudy');
-    } else if (weatherDescription.includes('비') || weatherDescription.includes('소나기')) {
+    } else if (weatherDescription.includes('비') || weatherDescription.includes('소나기')|| weatherDescription.includes('light rain')) {
         weatherIcon.classList.add('rainy');
     } else if (weatherDescription.includes('overcast clouds')) {
         weatherIcon.classList.add('overcastclouds');

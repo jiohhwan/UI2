@@ -1,0 +1,29 @@
+<%- include("./include/_header") %>
+
+    <title>공지사항추가</title>
+</head>
+<body>
+    <% if (message) { %>
+        <p style="color: green;"><%= message %></p>
+    <% } %>
+
+    <a href="/">뒤로가기</a>
+
+    <form action="/boardadd" method="POST">
+        <label for="title">제목:</label>
+        <input type="text" id="title" name="title"><br><br>
+        
+        <label for="sender">발신자:</label>
+        <input type="text" id="sender" name="sender"><br><br>
+        
+        <label for="receiver">수신자:</label>
+        <input type="text" id="receiver" name="receiver"><br><br>
+        
+        <label for="body">내용:</label>
+        <textarea id="body" name="body" style="width: 60%; height: 30%;"></textarea><br><br>
+        
+        <button type="submit">등록</button>
+    </form>
+
+</body>
+</html>

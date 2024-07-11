@@ -1,0 +1,29 @@
+<%- include("./include/_header") %>
+
+    <title>생활꿀팁</title>
+
+    <link rel="stylesheet" href="/css/tip.css">
+    <link rel="stylesheet" href="/css/media.css">
+    <script src="/js/tip.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="btn-group">
+            <button id="btn1">버튼 1</button>
+            <button id="btn2">버튼 2</button>
+            <button id="btn3">버튼 3</button>
+        </div>
+    </div>
+    <div class="slider-container">
+        <div class="slider">
+            <div class="slides">
+                <img src="/img/1.jpg" class="slide">
+                <img src="/img/2.jpg" class="slide">
+                <img src="/img/3.jpg" class="slide">
+            </div>
+            <button class="prev" onclick="changeSlide(-1)">❮</button>
+            <button class="next" onclick="changeSlide(1)">❯</button>
+        </div>
+    </div>
+
+<%- include("./include/_footer") %>

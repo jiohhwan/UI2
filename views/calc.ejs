@@ -1,17 +1,14 @@
-<!DOCTYPE html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>생활백서</title>
+<%- include("./include/_header") %>
 
-    <link rel="stylesheet" href="/css/tip.css">
-    <link rel="stylesheet" href="/css/media.css">
+    <title>실습점수계산기</title>
+
+    <link rel="stylesheet" href="../public/css/tip.css">
+    <link rel="stylesheet" href="../public/css/media.css">
 </head>
 
 <body>
     <style>
         body {
-            display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
@@ -51,5 +48,5 @@
     <p id="result"></p>
 
     <script src="/js/calc.js"></script>
-</body>
-</html>
+
+<%- include("./include/_footer") %>
