@@ -14,7 +14,7 @@ const getadmin = asyncHandler(async(req, res) => {
 
 //식단표
 const getfood = (req, res) => {
-  res.render("food", { message: null });
+  res.render("addFood", { message: null });
 };
 
 const uploadFood = async (req, res) => {
@@ -32,7 +32,7 @@ const uploadFood = async (req, res) => {
       size: fileSize,
     });
     await food.save();
-    res.render('food', { message: '식단표가 게시되었습니다.' });
+    res.render('addFood', { message: '식단표가 게시되었습니다.' });
   } catch (error) {
     console.error(error);
     res.status(500).send('식단표를 업데이트하지 못했습니다.');
@@ -42,7 +42,7 @@ const uploadFood = async (req, res) => {
 
 //학생당직표
 const getdayduty = (req, res) => {
-  res.render("dayduty", { message: null });
+  res.render("addDayduty", { message: null });
 };
 
 const uploadDayduty = async (req, res) => {
@@ -59,7 +59,7 @@ const uploadDayduty = async (req, res) => {
       size: fileSize,
     });
     await dayduty.save();
-    res.render('dayduty', { message: '학생당직표가 게시되었습니다.' });
+    res.render('addDayduty', { message: '학생당직표가 게시되었습니다.' });
   } catch (error) {
     console.error(error);
     res.status(500).send('학생당직표를 업데이트하지 못했습니다.');
@@ -69,7 +69,7 @@ const uploadDayduty = async (req, res) => {
 
 //안전당직표
 const getnightduty = (req, res) => {
-  res.render("nightduty", { message: null });
+  res.render("addNightduty", { message: null });
 };
 
 const uploadNightduty = async (req, res) => {
@@ -86,7 +86,7 @@ const uploadNightduty = async (req, res) => {
       size: fileSize,
     });
     await nightduty.save();
-    res.render('nightduty', { message: '안전당직표가 게시되었습니다.' });
+    res.render('addNightduty', { message: '안전당직표가 게시되었습니다.' });
   } catch (error) {
     console.error(error);
     res.status(500).send('안전당직표를 업데이트하지 못했습니다.');

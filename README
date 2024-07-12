@@ -1,0 +1,4 @@
+1. GITHUB에 UPDATE방법
+ git add .
+ git commit -m ""
+ git push origin master
