@@ -3,9 +3,38 @@
     <title>관리자페이지</title>
 </head>
 <body>
-    <h2>수정사항을 선택해주세요</h2>
+    <h4>수정사항을 선택해주세요</h4>
 
-    <a href="/boardadd">공지사항 게시</a>
-    <a href="/uploadimg">각종 표 게시</a>
+    모든 사관<br>
+    <a href="/boardadd">공지사항 게시</a><br><br>
+
+
+    보급사관<br>
+    <a href="/food">식단표 게시</a><br><br>
+
+
+    기관사관<br>
+    <a href="/dayduty">학생당직표 게시</a><br>
+    <a href="/nightduty">안전당직표 게시</a><br><br>
+
+
+    총무부서<br>
+    <a href="/addcloth">검수창고 재고 현황 게시</a><br><br>
+
+
+    탈모정보 변경
+    현재상태: 
+    <% if (hat.status === 'green') { %>
+        탈모 가능
+    <% } else { %>
+        탈모 불가능
+    <% } %>
+
+    <form action="/admin" method="POST">
+        <button type="submit" name="status" value="green">탈모 가능</button>
+        <button type="submit" name="status" value="red">탈모 불가능</button>
+    </form><br><br>
+
+    <a href="/">나가기</a>
 </body>
 </html>

@@ -17,22 +17,24 @@
     display: flex;
     align-items: center;
 }
+
 .hat {
     margin-left: auto; /* 오른쪽에 붙이기 위해 왼쪽 마진을 auto로 설정 */
-    
-    border-style:double;
-    border-width: 1px;
-    border-color: black;
-    border-radius: 1rem;
-
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
+}
+.circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    float: right;
+}
+.green {
+    background-color: green;
+}
+.red {
+    background-color: red;
 }
 
 .bus{
-
     background: linear-gradient(to bottom, #ff6eec, #3d9bee);
     color: white;
     
@@ -73,6 +75,7 @@
     padding: 10px; /* 안쪽 여백 설정 (선택 사항) */
 }
 .icon {
+    opacity: 0.5;
     text-decoration: none; /* 기본 텍스트 밑줄 제거 */
     padding: 10px 10px;
     border-radius: 20px;
@@ -154,4 +157,7 @@
 }
 .notice_list{
     margin-left: 2%;
+}
+.notice_list li {
+    margin-bottom: 5px;
 }

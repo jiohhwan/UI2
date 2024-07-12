@@ -1,12 +1,15 @@
-require('dotenv').config()
+require('dotenv').config();
 const express = require('express')
 const mongoose = require('mongoose')
 const errorMiddleware = require('./middleware/errorMiddleware')
 const app = express()
+const multer = require('multer');
+
 
 const PORT = process.env.PORT || 3000
 const MONGO_URL = process.env.MONGO_URL
-
+const storage = multer.memoryStorage(); 
+const upload = multer({ storage: storage });
 
 
 app.use(express.json())
@@ -14,12 +17,15 @@ app.use(express.urlencoded({extended: false}))
 app.set("view engine", "ejs");
 app.set("views", "./views");
 app.use(express.static("./public"));
-app.use(express.static('uploads'));
+
+
 
 
 app.use("/", require("./routes/Route"));
-app.use("/", require('./routes/uploadRoute') );
-app.use("/", require('./routes/BoardRoute') );
+app.use('/food', upload.single('file'), require('./routes/foodRoute'));
+app.use('/dayduty', upload.single('file'), require('./routes/daydutyRoute'));
+app.use('/nightduty', upload.single('file'), require('./routes/nightdutyRoute'));
+
 
 
 

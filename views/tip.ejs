@@ -1,0 +1,30 @@
+<%- include("./include/_header") %>
+
+    <title>생활꿀팁</title>
+
+    <link rel="stylesheet" href="/css/tip.css">
+    <link rel="stylesheet" href="/css/media.css">
+    <script src="/js/tip.js"></script>
+</head>
+<body>
+    <div class="slider-container">
+        <div class="slider">
+            <div class="slides">
+                <img src="/img/1.jpg" alt="Image 1">
+                <img src="/img/2.jpg" alt="Image 2">
+                <img src="/img/3.jpg" alt="Image 3">
+                <!-- Add more images as needed -->
+            </div>
+        </div>
+        <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+        <button class="next" onclick="changeSlide(1)">&#10095;</button>
+    </div>
+    <div class="pagination">
+        <a href="#" class="page-link">뭐할 때</a>
+        <a href="#" class="page-link">뭐할</a>
+        <a href="#" class="page-link">뭐할</a>
+        <!-- Add more links as needed -->
+    </div>
+    <a href="/">뒤로가기</a>
+</body>
+</html>

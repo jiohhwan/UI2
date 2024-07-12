@@ -1,86 +1,76 @@
 body {
-  font-family: Arial, sans-serif;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   height: 100vh;
   margin: 0;
-  background-color: #f3f3f3;
+  background-color: #f0f0f0;
 }
-
-.container {
-  position: relative;
-  display: inline-block;
-}
-.btn-group {
-  position: relative;
-  top: 0px; /* 버튼 위치 조정 */
-  left: 0px; /* 버튼 위치 조정 */
-  z-index: 10; /* 버튼을 다른 요소 위에 표시 */
-  justify-content: space-between; /* 버튼들 사이의 간격을 동일하게 배치 */
-  display: flex;
-  padding-bottom: 10px;
-  margin: auto;
-}
-
-.btn-group button {
-  margin-right: 5px;
-  padding: 5px 10px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
-
 
 .slider-container {
-  width: 100%;
-}
-
-.slider-container .slider {
   position: relative;
   width: 80%;
-  margin: auto;
+  max-width: 600px;
+  margin-bottom: 20px;
+}
+
+.slider {
   overflow: hidden;
+  border: 2px solid #ddd;
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
 }
 
-.slider-container .slider .slides {
+.slides {
   display: flex;
-  transition: transform 0.5s ease;
-  width: 100%; /* 이미지가 부모 요소인 .slider의 너비에 맞추기 */
+  transition: transform 0.5s ease-in-out;
 }
 
-.slider-container .slider .slides .slide {
-  min-width: 100%;
-  height: auto;
-  object-fit: cover; /* 이미지의 비율을 유지하며 슬라이드 컨테이너에 맞게 조절 */
-  vertical-align: top; /* 이미지 세로 정렬 */
+.slides img {
+  width: 100%;
+  border-radius: 10px;
 }
 
-.slider-container .slider button {
+.prev, .next {
+  cursor: pointer;
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.5);
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
   color: white;
+  font-weight: bold;
+  font-size: 18px;
   border: none;
-  padding: 10px;
-  cursor: pointer;
-  z-index: 10;
-  border-radius: 50%;
-}
-
-.prev {
-  left: 10px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
 }
 
 .next {
-  right: 10px;
+  right: 0;
+  border-radius: 3px 0 0 3px;
 }
 
-.slider-container .slider button:hover {
-  background-color: rgba(0, 0, 0, 0.8);
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+}
+
+.page-link {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin: 0 5px;
+  text-decoration: none;
+  color: black;
+}
+
+.page-link:hover {
+  background-color: #ddd;
 }

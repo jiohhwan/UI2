@@ -1,0 +1,19 @@
+<%- include("./include/_header") %>
+
+    <title>식단표 게시</title>
+</head>
+<body>
+    <h1>식단표 업로드</h1>
+    <form action="/food" method="POST" enctype="multipart/form-data">
+        <input type="file" name="file" required><br>
+        <button id="foodadd" type="submit">저장하기</button>
+    </form>
+
+    <% if (message) { %>
+        <p style="color: green;"><%= message %></p>
+    <% } %>
+
+    <a href="/admin">돌아가기</a>
+
+</body>
+</html>

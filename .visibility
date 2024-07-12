@@ -1,0 +1,50 @@
+화면 개요
+
+main(mainUI)
+    ㄴ 생활꿀팁(tip) /tip
+    ㄴ 검수창고()
+    ㄴ 선사정보()
+    ㄴ 실습점수계산기(calc) /calc
+    ㄴ 종합정보시스템
+    ㄴ FMS
+ 
+
+    ㄴ 설정(option) /option
+        ㄴ 로그인(login) /login
+            ㄴ 로그인 완료(admin) /login
+                ㄴ 공지사항게시(boardadd) /boardadd
+                ㄴ 각종 표 게시(upload) /upload
+
+
+
+
+
+
+main(mainUI)
+    ㄴ 생활꿀팁(tip) /tip
+    ㄴ 검수창고(cloth) /cloth
+    ㄴ 선사정보(company) /company
+    ㄴ 실습점수계산기(calc) /calc
+    ㄴ 종합정보시스템
+    ㄴ FMS
+    ㄴ 조직도(team) /team
+
+
+    ㄴ 게시판 + 클릭 시
+        ㄴ 게시판(board) /board
+
+    ㄴ 게시판 글 클릭 시
+        ㄴ 해당 글(boardDetail) /boardDetail
+
+
+    ㄴ 학사일정(calendar) /calendar
+    ㄴ 각종시간(time) /time
+    ㄴ 설정(option) /option
+        ㄴ 로그인(login) /login
+            ㄴ 로그인 완료(admin) /login
+                ㄴ 공지사항게시(boardadd) /boardadd 
+                ㄴ 공지사항수정(boardUpdate) /boardUpdate 아직 안 함
+                ㄴ 공지사항삭제(boardDelate) /boardDelate 아직 안 함
+                ㄴ 식단표 게시(addFood) /addFood
+                ㄴ 학생당직표 게시(addDayduty) /addDayduty
+                ㄴ 안전당직표 게시(addNightduty) /addNightduty

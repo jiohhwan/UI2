@@ -1,0 +1,18 @@
+<%- include("./include/_header") %>
+
+    <title>학생당직표 게시</title>
+</head>
+<body>
+    <h1>학생당직표 업로드</h1>
+    <form action="/dayduty" method="POST" enctype="multipart/form-data">
+        <input type="file" name="file" required><br>
+        <button type="submit">Upload</button>
+    </form>
+
+    <% if (message) { %>
+        <p style="color: green;"><%= message %></p>
+    <% } %>
+
+    <a href="/admin">돌아가기</a>
+</body>
+</html>

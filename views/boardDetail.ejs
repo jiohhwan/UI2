@@ -1,0 +1,13 @@
+<%- include("./include/_header") %>
+
+    <title><%= board.title %></title>
+</head>
+<body>
+    <h4>제목: <%= board.title %></h4>
+    <p>발신자: <%= board.sender %></p>
+    <p>수신자: <%= board.receiver %></p>
+    <p>내용: <%= board.body %></p>
+    <small>작성일: <%= board.createdAt %></small>
+
+</body>
+</html>
