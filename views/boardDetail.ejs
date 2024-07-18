@@ -1,13 +1,21 @@
 <%- include("./include/_header") %>
-
+    <link rel="stylesheet" href="/css/style.css">
+    
     <title><%= board.title %></title>
 </head>
 <body>
-    <h4>제목: <%= board.title %></h4>
-    <p>발신자: <%= board.sender %></p>
-    <p>수신자: <%= board.receiver %></p>
-    <p>내용: <%= board.body %></p>
-    <small>작성일: <%= board.createdAt %></small>
+    <div class="content">
+        <div class="boardDetail">
+            <div class="title">
+                제목: <%= board.title %>
+            </div>
+                <p>발신자: <%= board.sender %></p>
+                <p>수신자: <%= board.receiver %></p>
+                <p>내용: <%= board.body %></p>
+        </div>
+        <div class="small">
+            <small>작성일: <%= board.createdAt %></small>
+        </div>
+    </div>
 
-</body>
-</html>
+<%- include("./include/_footer") %>

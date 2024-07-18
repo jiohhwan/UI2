@@ -1,0 +1,18 @@
+<%- include("./include/_header") %>
+
+    <title>재고현황</title>
+</head>
+<body>
+    검창재고표 게시창
+    <h4>엑셀파일만 업로드해주세요</h4>
+    <form action="/addCloth" method="POST" enctype="multipart/form-data">
+      <input type="file" name="file" />
+      <button type="submit">저장</button>
+    </form>
+
+    <% if (message) { %>
+        <p style="color: green;"><%= message %></p>
+    <% } %>
+
+    <a href="/admin">돌아가기</a>
+<%- include("./include/_footer") %>

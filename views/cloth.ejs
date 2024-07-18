@@ -1,15 +1,30 @@
 <%- include("./include/_header") %>
-
+    <link rel="stylesheet" href="/css/style.css">
+    
     <title>검수창고</title>
-
 </head>
 <body>
-    검수창고 공지: 이용수칙 이미지
+    <div class="content">
+        <h2>검수창고 공지</h2>
+        <div id="myModal" class="modal">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img class="modal-content" id="modalImg">
+        </div>
+        <div class="imgbox">
+                <img src="/img/clothNotice.png" alt="" onclick="openModal('/img/clothNotice.png', '')">
+                <img src="/img/clothNotice2.png" alt="" onclick="openModal('/img/clothNotice2.png', '')">
+                <img src="/img/clothNotice3.png" alt="" onclick="openModal('/img/clothNotice3.png', '')">
+        </div>
+        <div class="cloth">
+            <h2>검수창고 신청</h2>
+            <a href="https://open.kakao.com/o/gyseAL9f">오픈채팅방 링크</a>
+        </div>
+        <div class="cloth">
+            <h2>검수창고 재고 현황</h2>
+            <p><%= latestFile.filename %> -
+            <a href="/download/latest">다운로드</a></p>
+        </div>
+    </div>
 
-    검수창고 신청: 오픈채팅링크
-    
-    검수창고 재고 현황: 엑셀 파일
-
-    <a href="/">뒤로가기</a>
-</body>
-</html>
+    <script src="/js/img.js"></script>
+<%- include("./include/_footer") %>

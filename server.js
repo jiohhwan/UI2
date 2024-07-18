@@ -22,9 +22,10 @@ app.use(express.static("./public"));
 
 
 app.use("/", require("./routes/Route"));
-app.use('/food', upload.single('file'), require('./routes/foodRoute'));
-app.use('/dayduty', upload.single('file'), require('./routes/daydutyRoute'));
-app.use('/nightduty', upload.single('file'), require('./routes/nightdutyRoute'));
+app.use('/addFood', upload.single('file'), require('./routes/foodRoute'));
+app.use('/addDayduty', upload.single('file'), require('./routes/daydutyRoute'));
+app.use('/addNightduty', upload.single('file'), require('./routes/nightdutyRoute'));
+app.use('/addCloth', upload.single('file'), require('./routes/clothRoute'));
 
 
 

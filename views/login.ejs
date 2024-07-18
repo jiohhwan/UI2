@@ -1,18 +1,29 @@
 <%- include("./include/_header") %>
+    <link rel="stylesheet" href="/css/style.css">
 
     <title>관리자로그인</title>
 </head>
 <body>
-    관리자 로그인
-    <form class="login" action="/login" method="POST">
-        <label for="username"><b>username</b></label>
-        <input type="text" placeholder="관리자아이디" name="username" id="username"><br>
-        <label for="password"><b>password</b></label>
-        <input type="password" placeholder="관리자비밀번호" name="password" id="password"><br>
-        <button type="submit">로그인</button>
-    </form>
+    <div class="content">
+        <div class="loginheader">
+            <h6>관리자 로그인</h6>
+        </div>
+        <form class="login" action="/login" method="POST">
+            <div class="con">
+                <label for="username"><b>username</b></label>
+                <input type="text" placeholder="" name="username" id="username"><br>
+            </div>
+            <div class="con">
+                <label for="password"><b>password</b></label>
+                <input type="password" placeholder="" name="password" id="password"><br>
+            </div>
+            <div class="con">
+                <button type="submit">로그인</button>
+            </div>
+        </form>
+        <div class="con">
+            <a href="/option">돌아가기</a>
+        </div>
+    </div>
 
-    <a href="/option">돌아가기</a>
-
-</body>
-</html>
+<%- include("./include/_footer") %>

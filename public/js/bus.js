@@ -213,7 +213,9 @@ function calculateTimeUntilNextBus() {
             break;
         }
     }
-
+    if (now.getHours() >= 0 && now.getHours() < 4) {
+        return '출발 예정 정보가 없습니다.';
+    }
     if (nextBuses.length === 0) {
         return '출발 예정 정보가 없습니다.';
     }
@@ -237,5 +239,4 @@ function updateBusInfo() {
     }, 1000); // 1초마다 실행
 }
 
-// 페이지 로드 시 자동으로 업데이트 시작
 window.onload = updateBusInfo;

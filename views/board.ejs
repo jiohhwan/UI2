@@ -1,38 +1,42 @@
 <%- include("./include/_header") %>
+<link rel="stylesheet" href="/css/style.css">
 
-  <title>공지사항목록</title>
-
+    <title>공지사항목록</title>
 </head>
 <body>
-    <h2>공지사항목록</h2>    
-    <ul>
-        <% boards.forEach(board => { %>
-            <li><a href="/board/<%= board.createdAt.toISOString() %>"><%= board.title %></a></li>
-        <% }) %>
-    </ul>
-    
-    <div>
-        <% if (currentPage > 1) { %>
-          <a href="/board?page=<%= currentPage - 1 %>">이전</a>
-        <% } else { %>
-        <a href="">이전</a>
-        <% } %>
-
-        <% for (let i = 1; i <= totalPages; i++) { %>
-          <% if (i === currentPage) { %>
-            <strong><%= i %></strong>
+  <div class="content">
+      <div class="header">
+          <h2>공지사항목록</h2>
+      </div>
+      <div class="container">
+          <ul>
+            <% boards.forEach(board => { %>
+                <li><a href="/board/<%= board.createdAt.toISOString() %>"><%= board.title %></a></li>
+            <% }) %>
+          </ul>
+      </div>
+  
+      <div class="buttons">
+          <% if (currentPage > 1) { %>
+            <a href="/board?page=<%= currentPage - 1 %>">이전</a>
           <% } else { %>
-            <a href="/board?page=<%= i %>"><%= i %></a>
+            <a href="">이전</a>
           <% } %>
-        <% } %>
-    
-        <% if (currentPage < totalPages) { %>
-          <a href="/board?page=<%= currentPage + 1 %>">다음</a>
-        <% } else { %>
-        <a href="">다음</a>
-        <% } %>
-    </div>
 
-    <a href="/">나가기</a>
-</body>
-</html>
+          <% for (let i = 1; i <= totalPages; i++) { %>
+            <% if (i === currentPage) { %>
+              <strong><%= i %></strong>
+            <% } else { %>
+              <a href="/board?page=<%= i %>"><%= i %></a>
+            <% } %>
+          <% } %>
+      
+          <% if (currentPage < totalPages) { %>
+            <a href="/board?page=<%= currentPage + 1 %>">다음</a>
+          <% } else { %>
+            <a href="">다음</a>
+          <% } %>
+      </div>
+  </div>
+    
+<%- include("./include/_footer") %>

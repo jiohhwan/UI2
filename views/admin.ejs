@@ -1,40 +1,45 @@
 <%- include("./include/_header") %>
+    <link rel="stylesheet" href="/css/style.css">
 
     <title>관리자페이지</title>
 </head>
 <body>
-    <h4>수정사항을 선택해주세요</h4>
+    <div class="content">
+        <section class="admin">
+            <h4>수정사항을 선택해주세요</h4>
+            <div class="admincon">
+                모든 사관
+                <a href="/boardAdd">공지사항 게시</a>
+                <a href="/boardUpdate">공지사항 수정</a>
+                <a href="/boardDelete">공지사항 삭제</a>*논의 후 추후 업데이트 예정
+            </div>
+            <div class="admincon">
+                보급사관
+                <a href="/addFood">식단표 게시</a>
+            </div>
+            <div class="admincon">
+                기관사관
+                <a href="/addDayduty">학생당직표 게시</a>
+                <a href="/addNightduty">안전당직표 게시</a>
+            </div>
+            <div class="admincon">
+                총무부서
+                <a href="/addCloth">검수창고 재고 현황 게시</a>
+            </div>
+            <div class="admincon">
+                탈모정보 변경<br>
+                현재상태: 
+                <% if (hat.status === 'green') { %>
+                    탈모 가능
+                <% } else { %>
+                    탈모 불가능
+                <% } %>
+            <form action="/admin" method="POST">
+                <button type="submit" name="status" value="green">탈모 가능</button>
+                <button type="submit" name="status" value="red">탈모 불가능</button>
+            </form>
+            </div>  
+        </section>
+    </div>
 
-    모든 사관<br>
-    <a href="/boardadd">공지사항 게시</a><br><br>
-
-
-    보급사관<br>
-    <a href="/addfood">식단표 게시</a><br><br>
-
-
-    기관사관<br>
-    <a href="/adddayduty">학생당직표 게시</a><br>
-    <a href="/addnightduty">안전당직표 게시</a><br><br>
-
-
-    총무부서<br>
-    <a href="/addcloth">검수창고 재고 현황 게시</a>*빠른 시일 내 추가 예정
-    <br><br>
-
-    탈모정보 변경
-    현재상태: 
-    <% if (hat.status === 'green') { %>
-        탈모 가능
-    <% } else { %>
-        탈모 불가능
-    <% } %>
-
-    <form action="/admin" method="POST">
-        <button type="submit" name="status" value="green">탈모 가능</button>
-        <button type="submit" name="status" value="red">탈모 불가능</button>
-    </form><br><br>
-
-    <a href="/">나가기</a>
-</body>
-</html>
+<%- include("./include/_footer") %>

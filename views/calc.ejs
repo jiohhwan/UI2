@@ -1,52 +1,32 @@
 <%- include("./include/_header") %>
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/media.css">
 
     <title>실습점수계산기</title>
-
-    <link rel="stylesheet" href="/css/tip.css">
-    <link rel="stylesheet" href="/css/media.css">
 </head>
-
 <body>
-    <style>
-        body {
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            font-family: Arial, sans-serif;
-        }
-        #calculatorForm {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        label, input {
-            margin: 3px 0;
-        }
-        h1, h2, p {
-            text-align: center;
-        }
-    </style>
-
-    <p style="font-size: 20px;">3학년 외부실습 점수 계산</p>
-    <p style="font-size: 25px; font-weight: bold;">점수 계산 방법</p>
-    <p style="font-size: 15px; font-weight: bolder;">(학점 + 상벌점/500) * 12.5 + 토익 점수 * 0.03 + 10</p>
-    <p style="font-size: 10px; margin: 0;">*10점은 필수 과목 이수 여부 (F하나에 -1점)</p>
-    <p style="font-size: 10px; margin: 0;">*상벌점 리미트 150점</p>
-
-    <form id="calculatorForm">
-        <label for="input1">학점:</label>
-        <input type="number" id="input1" required>
-        <br>
-        <label for="input2">상벌점:</label>
-        <input type="number" id="input2" required>
-        <br>
-        <label for="input3">토익:</label>
-        <input type="number" id="input3" required>
-    </form>
-    <h2>점수</h2>
-    <p id="result"></p>
+    <div class="content">
+        <div class="calc">
+            <p style="font-size: 20px;">3학년 외부실습 점수 계산</p>
+            <p style="font-size: 25px; font-weight: bold;">점수 계산 방법</p>
+            <p style="font-size: 15px; font-weight: bolder;">(학점 + 상벌점/500) * 12.5 + 토익 점수 * 0.03 + 10</p>
+            <p style="font-size: 10px; margin: 0;">*10점은 필수 과목 이수 여부 (F하나에 -1점)</p>
+            <p style="font-size: 10px; margin: 0;">*상벌점 리미트 150점</p>
+        
+            <form id="calculatorForm">
+                <label for="input1">학점:</label>
+                <input type="number" id="input1" required>
+                <br>
+                <label for="input2">상벌점:</label>
+                <input type="number" id="input2" required>
+                <br>
+                <label for="input3">토익:</label>
+                <input type="number" id="input3" required>
+            </form>
+            <h2>점수</h2>
+            <p id="result"></p>
+        </div>
+    </div>
 
     <script src="/js/calc.js"></script>
-
 <%- include("./include/_footer") %>

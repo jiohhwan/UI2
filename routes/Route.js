@@ -2,9 +2,9 @@ const express = require('express');
 const router = express.Router();
 const asyncHandler = require('express-async-handler');
 
-const { getboard, getboardadd, createBoard, selectBoard } = require("../controllers/BoardController")
+const { getBoard, getboardAdd, createBoard, selectBoard, getboardUpdate, updateBoard } = require("../controllers/BoardController")
 const { login, loginuser } = require("../controllers/loginController")
-const { getfood, getdayduty, getnightduty, getadmin, hat } = require("../controllers/addController")
+const { hat, getFood, getDayduty, getNightduty, getCloth, downloadCloth, getAdmin, getaddCloth } = require("../controllers/addController")
 const Board = require('../models/BoardModel');
 const Food = require('../models/foodModel');
 const Dayduty = require('../models/daydutyModel');
@@ -46,27 +46,31 @@ router.get('/calc', (req, res) => {
 router.get('/tip', (req, res) => {
         res.render("tip");
 })
-router.get('/cloth', (req, res) => {
-        res.render("cloth");
-})
+router.route("/cloth").get(getCloth);
+
+router.route("/download/latest").get(downloadCloth);
+
 router.get('/company', (req, res) => {
         res.render("company");
 })
 router.get('/team', (req, res) => {
         res.render("team");
 })
+router.get('/medicine', (req, res) => {
+        res.render("medicine");
+})
 
 
 
 //공지사항
-router.route("/board").get(getboard);
+router.route("/board").get(getBoard);
 
 router.route("/board/:createdAt").get(selectBoard);
 
 
 //navbar
-router.get('/option', (req, res) => {
-        res.render("option");
+router.get('/info', (req, res) => {
+        res.render("info");
 })
 router.get('/time', (req, res) => {
         res.render("time");
@@ -79,14 +83,18 @@ router.get('/calendar', (req, res) => {
 //관리자
 router.route("/login").get(login).post(loginuser);
 
-router.route("/admin").get(getadmin).post(hat);
+router.route("/admin").get(getAdmin).post(hat);
 
-router.route("/boardadd").get(getboardadd).post(createBoard);
+router.route("/boardAdd").get(getboardAdd).post(createBoard);
 
-router.route("/addfood").get(getfood);
+router.route("/boardUpdate").get(getboardUpdate).post(updateBoard);
 
-router.route("/adddayduty").get(getdayduty);
+router.route("/addFood").get(getFood);
 
-router.route("/addnightduty").get(getnightduty);
+router.route("/addDayduty").get(getDayduty);
+
+router.route("/addNightduty").get(getNightduty);
+
+router.route("/addCloth").get(getaddCloth);
 
 module.exports = router;

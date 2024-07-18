@@ -1,0 +1,30 @@
+<%- include("./include/_header") %>
+
+    <title>공지사항 수정</title>
+</head>
+<body>
+    <h1>공지사항 수정</h1>
+    <form action="/boardUpdate" method="POST">
+      <label for="title">수정할 게시글의 제목:</label>
+      <input type="text" id="title" name="title" required><br><br>
+  
+      <label for="field">수정할 필드 선택:</label>
+      <select id="field" name="field" required>
+        <option value="title">제목</option>
+        <option value="sender">발신자</option>
+        <option value="receiver">수신자</option>
+        <option value="body">내용</option>
+      </select><br><br>
+  
+      <label for="newValue">새로운 내용:</label>
+      <input type="text" id="newValue" name="newValue" required><br><br>
+  
+      <button type="submit">수정하기</button>
+    </form>
+    <% if (message) { %>
+        <p style="color: green;"><%= message %></p>
+    <% } %>
+
+    <a href="/">메인화면</a><br>
+    <a href="/admin">수정사항 선택페이지</a>
+<%- include("./include/_footer") %>

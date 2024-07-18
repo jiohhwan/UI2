@@ -42,9 +42,10 @@ main(mainUI)
     ㄴ 설정(option) /option
         ㄴ 로그인(login) /login
             ㄴ 로그인 완료(admin) /login
-                ㄴ 공지사항게시(boardadd) /boardadd 
-                ㄴ 공지사항수정(boardUpdate) /boardUpdate 아직 안 함
-                ㄴ 공지사항삭제(boardDelate) /boardDelate 아직 안 함
+                ㄴ 공지사항게시(boardAdd) /boardAdd 
+                ㄴ 공지사항수정(boardUpdate) /boardUpdate
+                ㄴ 공지사항삭제(boardDelete) /boardDelete 아직 안 함
                 ㄴ 식단표 게시(addFood) /addFood
                 ㄴ 학생당직표 게시(addDayduty) /addDayduty
                 ㄴ 안전당직표 게시(addNightduty) /addNightduty
+                ㄴ 검창재고표 게시(addCloth) /addCloth
