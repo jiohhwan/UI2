@@ -28,7 +28,7 @@ const getBoard = asyncHandler(async(req, res) => {
 
 //공지사항 추가 페이지
 const getboardAdd = (req, res) => {
-    res.render("BoardAdd", { message: null });
+    res.render("boardAdd", { message: null });
 };
 
 //공지사항 추가
